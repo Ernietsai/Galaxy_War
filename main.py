@@ -69,7 +69,7 @@ async def main():
     start_pause_time = 0
     spaceship_characteristic = 2  #飛船特性
     player_before_site = []
-    wav_background_music = pygame.mixer.Sound(os.path.join('music',"Laser-bursts-sound-effect2.wav"))
+    wav_background_music = pygame.mixer.Sound(os.path.join('music',"Laser-bursts-sound-effect2.ogg"))
     channel = pygame.mixer.Channel(0)
     is_pausing_background_music = 0  # {0:False, 1:True}  #背景音樂正在暫停
     have_ad = False
@@ -91,7 +91,7 @@ async def main():
     def start_ad(surf):  #廣告
         global ad_img_size, ad_img
         surf.fill(black)
-        ad_sound = pygame.mixer.Sound(os.path.join('music',"Trap Beat(廣告音樂).wav"))
+        ad_sound = pygame.mixer.Sound(os.path.join('music',"Trap Beat(廣告音樂).ogg"))
         ad_sound.play()
         ad_img_size = (int(459*7/10), int(320*7/10))
         ad_img = pygame.transform.scale(pygame.image.load(os.path.join('picture', "廣告2.png")).convert(), ad_img_size)
@@ -176,25 +176,25 @@ async def main():
     #try:
     all_background_music = []
     '''
-        pygame.mixer.Sound(os.path.join('H:\\', "_Alan Walker - Force    Indian-Programmer's.mp3"))  #測試有沒有插記憶卡
+        pygame.mixer.Sound(os.path.join('H:\\', "_Alan Walker - Force    Indian-Programmer's.ogg"))  #測試有沒有插記憶卡
         all_background_music = {  #記憶卡裡的音樂
-            0:os.path.join('H:\\', "_Alan Walker - Force    Indian-Programmer's.mp3"),
-            1:os.path.join('H:\\', "MULICS.wav"),
-            2:os.path.join('H:\\',"Wii Music - Gaming Background Music (HD) - Copy.wav"),
-            3:os.path.join('H:\\',"Mario-theme-song.mp3"),
-            4:os.path.join('H:\\',"Menu Music amazingQ's.mp3"),
-            5:os.path.join('H:\\',"TheFatRat - Windfall [Tasty Release].mp3  amazingQ's.wav"),
-            6:os.path.join('H:\\',"Treenan Lucasliu9595's.mp3"),
-            7:os.path.join('H:\\',"Song  -Zeric-'s.mp3"),
-            8:os.path.join('H:\\',"Outro  JC_ProGold's.mp3"),
-            9:os.path.join('H:\\',"Among Us Theme Song (Moondai Remix) kemie's.wav"),
-            10:os.path.join('H:\\',"Electro-Light - Symbolism kemie's.wav"),
-            11:os.path.join('H:\\',"Sunshine kemie's.mp3"),
-            12:os.path.join('H:\\',"Tryhard  kemie's.mp3"),
-            13:os.path.join('H:\\',"Hello   (KHPe14133,s).wav"),
-            14:os.path.join('H:\\',"Nebula   (KHPe14133's).wav"),
-            15:os.path.join('H:\\',"Syn Cole - Feel Good [NCS Release]   (KHPe14133,s).wav"),
-            16:os.path.join('H:\\',"Unlimited   (KHPe14133,s).mp3")
+            0:os.path.join('H:\\', "_Alan Walker - Force    Indian-Programmer's.ogg"),
+            1:os.path.join('H:\\', "MULICS.ogg"),
+            2:os.path.join('H:\\',"Wii Music - Gaming Background Music (HD) - Copy.ogg"),
+            3:os.path.join('H:\\',"Mario-theme-song.ogg"),
+            4:os.path.join('H:\\',"Menu Music amazingQ's.ogg"),
+            5:os.path.join('H:\\',"TheFatRat - Windfall [Tasty Release].ogg  amazingQ's.ogg"),
+            6:os.path.join('H:\\',"Treenan Lucasliu9595's.ogg"),
+            7:os.path.join('H:\\',"Song  -Zeric-'s.ogg"),
+            8:os.path.join('H:\\',"Outro  JC_ProGold's.ogg"),
+            9:os.path.join('H:\\',"Among Us Theme Song (Moondai Remix) kemie's.ogg"),
+            10:os.path.join('H:\\',"Electro-Light - Symbolism kemie's.ogg"),
+            11:os.path.join('H:\\',"Sunshine kemie's.ogg"),
+            12:os.path.join('H:\\',"Tryhard  kemie's.ogg"),
+            13:os.path.join('H:\\',"Hello   (KHPe14133,s).ogg"),
+            14:os.path.join('H:\\',"Nebula   (KHPe14133's).ogg"),
+            15:os.path.join('H:\\',"Syn Cole - Feel Good [NCS Release]   (KHPe14133,s).ogg"),
+            16:os.path.join('H:\\',"Unlimited   (KHPe14133,s).ogg")
             }
         '''
     if os.access('H:\\', os.F_OK):
@@ -210,19 +210,19 @@ async def main():
     else:
         print('沒插記憶卡')
         all_background_music = [  #遊戲背景音樂
-            os.path.join('music',"Treenan Lucasliu9595's.mp3"),  #0
-            os.path.join('music',"Song  -Zeric-'s.mp3"),  #1
-            os.path.join('music',"_Alan Walker - Force    Indian-Programmer's.mp3"),  #2
-            os.path.join('music',"Among Us Theme Song (Moondai Remix) kemie's.wav")   #3
+            os.path.join('music',"Treenan Lucasliu9595's.ogg"),  #0
+            os.path.join('music',"Song  -Zeric-'s.ogg"),  #1
+            os.path.join('music',"_Alan Walker - Force    Indian-Programmer's.ogg"),  #2
+            os.path.join('music',"Among Us Theme Song (Moondai Remix) kemie's.ogg")   #3
             ]
     '''
     except: 
         print('沒插記憶卡')
         all_background_music = [  #遊戲背景音樂
-        os.path.join('music',"Treenan Lucasliu9595's.mp3"),  #0
-        os.path.join('music',"Song  -Zeric-'s.mp3"),  #1
-        os.path.join('music',"_Alan Walker - Force    Indian-Programmer's.mp3"),  #2
-        os.path.join('music',"Among Us Theme Song (Moondai Remix) kemie's.wav")   #3
+        os.path.join('music',"Treenan Lucasliu9595's.ogg"),  #0
+        os.path.join('music',"Song  -Zeric-'s.ogg"),  #1
+        os.path.join('music',"_Alan Walker - Force    Indian-Programmer's.ogg"),  #2
+        os.path.join('music',"Among Us Theme Song (Moondai Remix) kemie's.ogg")   #3
         ]
     print(all_background_music)
     '''
@@ -230,9 +230,9 @@ async def main():
 
 
     #載入音效
-    shoot_sound       = pygame.mixer.Sound(os.path.join('music',"Laser-bursts-sound-effect2.wav"))
-    expl_sound        = pygame.mixer.Sound(os.path.join('music',"Bomb-explosion-sound-effect.mp3"))
-    enemy_shoot_sound = pygame.mixer.Sound(os.path.join('music',"Shot-navy-artillery-weapons-military-exercise.wav"))
+    shoot_sound       = pygame.mixer.Sound(os.path.join('music',"Laser-bursts-sound-effect2.ogg"))
+    expl_sound        = pygame.mixer.Sound(os.path.join('music',"Bomb-explosion-sound-effect.ogg"))
+    enemy_shoot_sound = pygame.mixer.Sound(os.path.join('music',"Shot-navy-artillery-weapons-military-exercise.ogg"))
 
     #設定音量
     pygame.mixer.music.set_volume(voice)
@@ -339,10 +339,10 @@ async def main():
                 print('已拔出記憶卡')
                 print('現在音樂:', str(music))
                 all_background_music = {  #遊戲背景音樂
-                0:os.path.join('music',"Treenan Lucasliu9595's.mp3"),
-                1:os.path.join('music',"Song  -Zeric-'s.mp3"),
-                2:os.path.join('music',"_Alan Walker - Force    Indian-Programmer's.mp3"),
-                3:os.path.join('music',"Among Us Theme Song (Moondai Remix) kemie's.wav")
+                0:os.path.join('music',"Treenan Lucasliu9595's.ogg"),
+                1:os.path.join('music',"Song  -Zeric-'s.ogg"),
+                2:os.path.join('music',"_Alan Walker - Force    Indian-Programmer's.ogg"),
+                3:os.path.join('music',"Among Us Theme Song (Moondai Remix) kemie's.ogg")
                 }
                 choice_background_music(all_background_music_switching_method[background_music_switching_method])
                 play_background_music(music, run_time + 1)
@@ -352,10 +352,10 @@ async def main():
                 print('已拔出記憶卡')
                 print('現在音樂:', str(music))
                 all_background_music = {  #遊戲背景音樂
-                0:os.path.join('music',"Treenan Lucasliu9595's.mp3"),
-                1:os.path.join('music',"Song  -Zeric-'s.mp3"),
-                2:os.path.join('music',"_Alan Walker - Force    Indian-Programmer's.mp3"),
-                3:os.path.join('music',"Among Us Theme Song (Moondai Remix) kemie's.wav")
+                0:os.path.join('music',"Treenan Lucasliu9595's.ogg"),
+                1:os.path.join('music',"Song  -Zeric-'s.ogg"),
+                2:os.path.join('music',"_Alan Walker - Force    Indian-Programmer's.ogg"),
+                3:os.path.join('music',"Among Us Theme Song (Moondai Remix) kemie's.ogg")
                 }
                 choice_background_music(all_background_music_switching_method[background_music_switching_method])
                 play_background_music(music, run_time + 1)
@@ -374,10 +374,10 @@ async def main():
             print('已拔出記憶卡')
             print('現在音樂:', str(background_music))
             all_background_music = [  #遊戲背景音樂
-                os.path.join('music',"Treenan Lucasliu9595's.mp3"),  #0
-                os.path.join('music',"Song  -Zeric-'s.mp3"),  #1
-                os.path.join('music',"_Alan Walker - Force    Indian-Programmer's.mp3"),  #2
-                os.path.join('music',"Among Us Theme Song (Moondai Remix) kemie's.wav")   #3
+                os.path.join('music',"Treenan Lucasliu9595's.ogg"),  #0
+                os.path.join('music',"Song  -Zeric-'s.ogg"),  #1
+                os.path.join('music',"_Alan Walker - Force    Indian-Programmer's.ogg"),  #2
+                os.path.join('music',"Among Us Theme Song (Moondai Remix) kemie's.ogg")   #3
                 ]
         if not channel.get_busy():
             choice_background_music(all_background_music_switching_method[background_music_switching_method])
