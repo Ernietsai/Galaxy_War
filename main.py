@@ -16,6 +16,11 @@ import pygame.joystick, pygame.event, pygame.constants, pygame.display, pygame.d
 import os.path
 
 async def main():
+    global running, game_state, old_game_state, can_change_old_game_state
+    global score, blood, show_blood, wordX, wordY, pause_time, start_pause_time
+    global enemy1_count, enemy2_count, enemy3_count, missile1_count
+    global most_enemy1, most_enemy2, most_enemy3, most_missile1
+    global died_expl, is_pause
     #顏色設定
     white=(255,255,255)
     black=(0,0,0)
@@ -274,8 +279,8 @@ async def main():
 
         
     #設定函式
-    font_name1=pygame.font.match_font('arial')
-    font_name2=pygame.font.SysFont('微軟正黑體',100)
+    font_name1=pygame.font.Font(None, 36)
+    font_name2=pygame.font.Font(os.path.join('font', "NotoSansTC-VariableFont_wght.tff"),100)
     all_font_name=[font_name1,font_name2]
     #print(all_font_name)
 
@@ -1070,25 +1075,25 @@ async def main():
             now_time=time.time() - start_game_time-pause_time
             all_sprite.update()
             stars.update()
-            while score >= 0 and score <= 90 and enemy1_count < most_enemy1 and not died_expl:#加敵人1
+            if score >= 0 and score <= 90 and enemy1_count < most_enemy1 and not died_expl:#加敵人1
                 enemy1=Enemy1()
                 all_sprite.add(enemy1)
                 enemys.add(enemy1)
 
-            while score >= 30 and enemy2_count < most_enemy2 and not died_expl:#加敵人2
+            if score >= 30 and enemy2_count < most_enemy2 and not died_expl:#加敵人2
                 most_enemy1 = 2
                 enemy2=Enemy2()
                 all_sprite.add(enemy2)
                 enemys.add(enemy2)
 
-            while score >= 90 and enemy3_count < most_enemy3 and not died_expl:#加敵人3
+            if score >= 90 and enemy3_count < most_enemy3 and not died_expl:#加敵人3
                 most_enemy1 = 1
                 most_enemy2 = 2
                 enemy3=Enemy3()
                 all_sprite.add(enemy3)
                 enemys.add(enemy3)
             
-            while score >= 20 and missile1_count < most_missile1 and not died_expl:#加飛彈
+            if score >= 20 and missile1_count < most_missile1 and not died_expl:#加飛彈
                 missile1 = Missile1(random.randint(0,width), random.randint(-60,-1))
                 all_sprite.add(missile1)
                 enemys.add(missile1)
