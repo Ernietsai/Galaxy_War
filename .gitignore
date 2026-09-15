@@ -1,0 +1,22 @@
+# Pygbag 編譯產出的 Web 靜態檔目錄 (由 GitHub Actions 自動生成即可，不需提交)
+build/
+.pygame_web/
+
+# Python 自動生成的快取檔案與目錄
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 虛擬環境
+venv/
+env/
+ENV/
+
+# IDE 或編輯器的設定檔
+.vscode/
+.idea/
+*.swp
+
+# 作業系統產生的檔案
+.DS_Store
+Thumbs.db

@@ -1,0 +1,48 @@
+name: Deploy Pygame to GitHub Pages
+
+# 設定觸發條件：當程式碼推送到 main 分支時執行
+on:
+  push:
+    branches:
+      - main
+  # 允許在 GitHub 頁面上手動點擊觸發
+  workflow_dispatch:
+
+# 授予 GITHUB_TOKEN 寫入權限（發布至 gh-pages 分支時需要）
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. 檢出倉庫程式碼
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # 2. 設定 Python 環境
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # 3. 安裝 Pygbag 及相關依賴
+      - name: Install Pygbag
+        run: |
+          python -m pip install --upgrade pip
+          pip install pygbag
+
+      # 4. 使用 Pygbag 將 main.py 編譯成 Web (Wasm/HTML) 檔案
+      # --build 參數會自動將產出檔案放到 build/web 資料夾中
+      - name: Build Web Application
+        run: |
+          pygbag --build main.py
+
+      # 5. 將生成的 build/web 內容部署到 gh-pages 分支
+      - name: Deploy to GitHub Pages
+        uses: Peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build/web
+          force_orphan: true
