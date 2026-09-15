@@ -176,34 +176,34 @@ async def main():
     #try:
     all_background_music = []
     '''
-        pygame.mixer.Sound(os.path.join('H:\\', "_Alan Walker - Force    Indian-Programmer's.ogg"))  #測試有沒有插記憶卡
+        pygame.mixer.Sound(os.path.join('H://', "_Alan Walker - Force    Indian-Programmer's.ogg"))  #測試有沒有插記憶卡
         all_background_music = {  #記憶卡裡的音樂
-            0:os.path.join('H:\\', "_Alan Walker - Force    Indian-Programmer's.ogg"),
-            1:os.path.join('H:\\', "MULICS.ogg"),
-            2:os.path.join('H:\\',"Wii Music - Gaming Background Music (HD) - Copy.ogg"),
-            3:os.path.join('H:\\',"Mario-theme-song.ogg"),
-            4:os.path.join('H:\\',"Menu Music amazingQ's.ogg"),
-            5:os.path.join('H:\\',"TheFatRat - Windfall [Tasty Release].ogg  amazingQ's.ogg"),
-            6:os.path.join('H:\\',"Treenan Lucasliu9595's.ogg"),
-            7:os.path.join('H:\\',"Song  -Zeric-'s.ogg"),
-            8:os.path.join('H:\\',"Outro  JC_ProGold's.ogg"),
-            9:os.path.join('H:\\',"Among Us Theme Song (Moondai Remix) kemie's.ogg"),
-            10:os.path.join('H:\\',"Electro-Light - Symbolism kemie's.ogg"),
-            11:os.path.join('H:\\',"Sunshine kemie's.ogg"),
-            12:os.path.join('H:\\',"Tryhard  kemie's.ogg"),
-            13:os.path.join('H:\\',"Hello   (KHPe14133,s).ogg"),
-            14:os.path.join('H:\\',"Nebula   (KHPe14133's).ogg"),
-            15:os.path.join('H:\\',"Syn Cole - Feel Good [NCS Release]   (KHPe14133,s).ogg"),
-            16:os.path.join('H:\\',"Unlimited   (KHPe14133,s).ogg")
+            0:os.path.join('H://', "_Alan Walker - Force    Indian-Programmer's.ogg"),
+            1:os.path.join('H://', "MULICS.ogg"),
+            2:os.path.join('H://',"Wii Music - Gaming Background Music (HD) - Copy.ogg"),
+            3:os.path.join('H://',"Mario-theme-song.ogg"),
+            4:os.path.join('H://',"Menu Music amazingQ's.ogg"),
+            5:os.path.join('H://',"TheFatRat - Windfall [Tasty Release].ogg  amazingQ's.ogg"),
+            6:os.path.join('H://',"Treenan Lucasliu9595's.ogg"),
+            7:os.path.join('H://',"Song  -Zeric-'s.ogg"),
+            8:os.path.join('H://',"Outro  JC_ProGold's.ogg"),
+            9:os.path.join('H://',"Among Us Theme Song (Moondai Remix) kemie's.ogg"),
+            10:os.path.join('H://',"Electro-Light - Symbolism kemie's.ogg"),
+            11:os.path.join('H://',"Sunshine kemie's.ogg"),
+            12:os.path.join('H://',"Tryhard  kemie's.ogg"),
+            13:os.path.join('H://',"Hello   (KHPe14133,s).ogg"),
+            14:os.path.join('H://',"Nebula   (KHPe14133's).ogg"),
+            15:os.path.join('H://',"Syn Cole - Feel Good [NCS Release]   (KHPe14133,s).ogg"),
+            16:os.path.join('H://',"Unlimited   (KHPe14133,s).ogg")
             }
         '''
-    if os.access('H:\\', os.F_OK):
+    if os.access('H://', os.F_OK):
         #file_index = 0
-        for file in os.listdir('H:\\'):
+        for file in os.listdir('H://'):
             #print(file)
-            if os.path.isfile('H:\\' + file):
+            if os.path.isfile('H://' + file):
                 #print('x:'+file)
-                all_background_music.append('H:\\' + file)
+                all_background_music.append('H://' + file)
                 #file_index += 1
         #del file_index
         print('記憶卡讀取成功')  #記憶卡讀取成功提示
@@ -369,7 +369,7 @@ async def main():
 
     def check_is_playing_music():
         global all_background_music, background_music, wav_background_music
-        if len(all_background_music) != 4 and (not os.access('H:\\', os.F_OK)):  #拔出記憶卡
+        if len(all_background_music) != 4 and (not os.access('H://', os.F_OK)):  #拔出記憶卡
             wav_background_music.stop()
             print('已拔出記憶卡')
             print('現在音樂:', str(background_music))
