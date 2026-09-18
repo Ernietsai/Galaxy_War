@@ -183,10 +183,10 @@ async def main():
 
     #try:
     all_background_music = [  #遊戲背景音樂
-        os.path.join('music',"Treenan Lucasliu9595's.ogg"),  #0
-        os.path.join('music',"Song  -Zeric-'s.ogg"),  #1
-        os.path.join('music',"_Alan Walker - Force    Indian-Programmer's.ogg"),  #2
-        os.path.join('music',"Among Us Theme Song (Moondai Remix) kemie's.ogg")   #3
+        os.path.join('music',"Treenan_Lucasliu9595.ogg"),  #0
+        os.path.join('music',"Song_-Zeric-.ogg"),  #1
+        os.path.join('music',"_Alan Walker_-_Force_Indian-Programmer.ogg"),  #2
+        os.path.join('music',"Among_Us_Theme_Song_(Moondai_Remix)_kemie.ogg")   #3
         ]
     background_music = random.randint(0,len(all_background_music)-1)  #隨機選一首背景音樂播
 
