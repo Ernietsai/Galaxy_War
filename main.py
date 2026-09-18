@@ -90,7 +90,7 @@ async def main():
     screen = pygame.display.set_mode((width,height), flags = pygame.constants.RESIZABLE if is_fullscreen else 0)
     clock = pygame.time.Clock()
     pygame.display.set_caption('Galaxy War')
-    pygame.display.set_icon(pygame.image.load(os.path.join('picture', '遊戲圖示(小).png')).convert())
+    pygame.display.set_icon(pygame.image.load(os.path.join('picture', '遊戲圖示(小).png')))#.convert())
     pygame.mixer.init()
 
     #廣告前使用函式
@@ -100,7 +100,7 @@ async def main():
         ad_sound = pygame.mixer.Sound(os.path.join('music',"Trap Beat(廣告音樂).ogg"))
         ad_sound.play()
         ad_img_size = (int(459*7/10), int(320*7/10))
-        ad_img = pygame.transform.scale(pygame.image.load(os.path.join('picture', "廣告2.png")).convert(), ad_img_size)
+        ad_img = pygame.transform.scale(pygame.image.load(os.path.join('picture', "廣告2.png")))#.convert(), ad_img_size)
         ad_img.set_colorkey(black)
         surf.blit(ad_img, (width/2 - ad_img_size[0]/2, height/2 - ad_img_size[1]/2))
         pygame.display.update()
@@ -205,26 +205,26 @@ async def main():
 
     #載入圖片
     died_expl_size = 180
-    background     = pygame.image.load(os.path.join('picture',"空宇宙.png")).convert()
+    background     = pygame.image.load(os.path.join('picture',"空宇宙.png"))#.convert()
     background     = pygame.transform.scale(background,(width,height))
-    menu_background     = pygame.image.load(os.path.join('picture',"遊戲圖示(大).png")).convert()
+    menu_background     = pygame.image.load(os.path.join('picture',"遊戲圖示(大).png"))#.convert()
     menu_background     = pygame.transform.scale(menu_background,(width,height))
-    title_picture    = pygame.image.load(os.path.join('picture', "Galaxy war 標題2.png")).convert()
-    player_picture   = pygame.image.load(os.path.join('picture', "飛船.png")).convert()
-    enemy1_picture   = pygame.image.load(os.path.join('picture', "奇怪飛船.png")).convert()
-    enemy2_picture   = pygame.image.load(os.path.join('picture', "敵人2.png")).convert()
-    enemy3_picture   = pygame.image.load(os.path.join('picture', "U翼運輸機.png")).convert()
-    missile1_picture = pygame.image.load(os.path.join('picture', "飛彈1.png")).convert()
+    title_picture    = pygame.image.load(os.path.join('picture', "Galaxy war 標題2.png"))#.convert()
+    player_picture   = pygame.image.load(os.path.join('picture', "飛船.png"))#.convert()
+    enemy1_picture   = pygame.image.load(os.path.join('picture', "奇怪飛船.png"))#.convert()
+    enemy2_picture   = pygame.image.load(os.path.join('picture', "敵人2.png"))#.convert()
+    enemy3_picture   = pygame.image.load(os.path.join('picture', "U翼運輸機.png"))#.convert()
+    missile1_picture = pygame.image.load(os.path.join('picture', "飛彈1.png"))#.convert()
     all_expl = {}
     all_expl['lg']   = []
     all_expl['sm']   = []
     all_expl['died'] = []
-    died_expl_img = pygame.image.load(os.path.join('picture',"E0000.png")).convert()
+    died_expl_img = pygame.image.load(os.path.join('picture',"E0000.png"))#.convert()
     died_expl_img.set_colorkey(black)
     all_expl['died'].append(pygame.transform.scale(died_expl_img, (died_expl_size, died_expl_size)))
     for i in range(1, 10):
-        expl_img = pygame.image.load(os.path.join('picture',f"Effect{i}.png")).convert()
-        died_expl_img = pygame.image.load(os.path.join('picture',f"E000{i}.png")).convert()
+        expl_img = pygame.image.load(os.path.join('picture',f"Effect{i}.png"))#.convert()
+        died_expl_img = pygame.image.load(os.path.join('picture',f"E000{i}.png"))#.convert()
         expl_img.set_colorkey(black)
         died_expl_img.set_colorkey(black)
         all_expl['lg'].append(pygame.transform.scale(expl_img, (75, 75)))
