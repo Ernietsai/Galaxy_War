@@ -106,7 +106,7 @@ async def main():
         pygame.display.update()
 
 
-    def stop_ad(surf):
+    async def stop_ad(surf):
         global start_ad_time
         alpha_background = copy.copy(background)
         ad_x = width/2 - ad_img_size[0]/2
@@ -116,13 +116,14 @@ async def main():
             for event in pygame.event.get():#暫停時離開
                 if event.type == pygame.QUIT:
                     pygame.quit()
-                    sys.exit()
+                    return
+            await asyncio.sleep(0)
         for i in range(0, 255, 3):
             clock.tick(FPS)
             for event in pygame.event.get():#暫停時離開
                 if event.type == pygame.QUIT:
                     pygame.quit()
-                    sys.exit()
+                    return
             stars.update()
             surf.fill(black)
             #print(alpha_background)#, background.convert_alpha(255-i))
@@ -131,6 +132,7 @@ async def main():
             surf.blit(ad_img, (width/2 - ad_img_size[0]/2, height/2 - ad_img_size[1]/2))
             stars.draw(screen)
             pygame.display.update()
+            await asyncio.sleep(0)
         del start_ad_time
 
 
@@ -234,9 +236,9 @@ async def main():
 
         
     #設定函式
-    font_name1=pygame.font.Font(None, 36)
-    font_name2=pygame.font.Font(os.path.join('font', "NotoSansTC-VariableFont_wght.tff"),100)
-    all_font_name=[font_name1,font_name2]
+    font_name1 = None
+    font_name2 = os.path.join('font', "NotoSansTC-VariableFont_wght.ttf")
+    all_font_name = [font_name1,font_name2]
     #print(all_font_name)
 
     def draw_text(surf,text,size,color,x,y):
@@ -845,7 +847,7 @@ async def main():
 
 
     if have_ad:
-        stop_ad(screen)
+        await stop_ad(screen)
 
 
     #遊戲迴圈
