@@ -35,7 +35,7 @@ async def main():
 
 
     #設定長、寬
-    is_fullscreen = True  #是否全螢幕
+    is_fullscreen = False  #是否全螢幕
     info = pygame.display.Info()  #顯示器尺寸
     if is_fullscreen:
         width = info.current_w  #500
@@ -855,7 +855,8 @@ async def main():
     now_time=0
     while running:
         clock.tick(FPS) 
-        width, height = screen.get_size()
+        if is_fullscreen:
+            width, height = screen.get_size()
         #輸入
         for event in pygame.event.get():  #鍵盤事件和關閉
 
